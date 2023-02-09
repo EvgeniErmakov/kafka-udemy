@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 import java.util.Properties;
 
 public class ProducerWithKeys {
-    private static final Logger log = LoggerFactory.getLogger(ProducerCallbacks.class);
+    private static final Logger log = LoggerFactory.getLogger(ProducerWithKeys.class);
 
     public static void main(String[] args) throws InterruptedException {
         Properties properties = new Properties();
