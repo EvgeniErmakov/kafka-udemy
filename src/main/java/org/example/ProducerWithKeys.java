@@ -23,7 +23,7 @@ public class ProducerWithKeys {
 
         for (int x = 0; x < 2; x++) {
             for (int i = 0; i < 10; i++) {
-                String topic = "second_topic";
+                String topic = "third_topic";
                 String key = "id_" + i;
                 String value = "hello world " + i;
 
