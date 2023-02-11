@@ -1,4 +1,8 @@
 # kafka-udemy
+##
+Подробные материалы 
+https://www.conduktor.io/kafka/advanced-kafka-consumer-with-java/
+
 ## Запустил кафку:
 kafka-storage.sh random-uuid
 kafka-storage.sh format -t IwKmd6xbR-mJXWgfkoqAFA -c ./config/kraft/server.properties
