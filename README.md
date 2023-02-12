@@ -23,6 +23,12 @@ kafka-topics.sh --bootstrap-server localhost:9092 --list
 ## Получить больше информации о конкретном топике:
 kafka-topics.sh --bootstrap-server localhost:9092 --topic first_topic --describe
 
+## Получить лист групп
+bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
+
+## Получить больше информации о конкретной топпе:
+bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group group_name
+
 ## Удалить топик:
 kafka-topics.sh --bootstrap-server localhost:9092 --topic first_topic --delete
 
