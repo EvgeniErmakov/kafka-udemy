@@ -50,3 +50,15 @@ kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic third_topic 
 
 ## Войти, чтобы принимать сообщения зная время, партицию, ключ:
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first_topic --formatter kafka.tools.DefaultMessageFormatter --property print.timestamp=true --property print.key=true --property print.value=true --property print.partition=true --from-beginning
+
+
+## kafka-config
+
+### Получить конфигурацию топика по имени
+kafka-configs.sh --bootstrap-server localhost:9092 --entity-type topics --entity-name 5_topic --describe
+
+### Изменить конфигурацию топика, установить минимальное значение репликации
+kafka-configs.sh --bootstrap-server localhost:9092 --entity-type topics --entity-name 5_topic --alter --add-config min.insync.replicas=2
+
+### Удалить конфигурацию 
+kafka-configs.sh --bootstrap-server localhost:9092 --entity-type topics --entity-name 5_topic --alter --delete-config min.insync.replicas
