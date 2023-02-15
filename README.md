@@ -54,6 +54,12 @@ kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic third_topic 
 
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic third_topic --group fourth_group --from-beginning
 
+### Чтение из файла строка за строкой
+cat ./1.txt | kafka-console-producer.sh --topic slerm2 --bootstrap-server=localhost:9092 --sync
+
+### Чтение сразу всего файла
+cat ./1.txt | kafka-console-producer.sh --topic slerm2 --bootstrap-server=localhost:9092
+
 ## Войти, чтобы принимать сообщения зная время, партицию, ключ:
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic first_topic --formatter kafka.tools.DefaultMessageFormatter --property print.timestamp=true --property print.key=true --property print.value=true --property print.partition=true --from-beginning
 
@@ -64,6 +70,9 @@ kafka-configs.sh --bootstrap-server localhost:9092 --entity-type topics --entity
 
 ### Изменить конфигурацию топика, установить минимальное значение репликации
 kafka-configs.sh --bootstrap-server localhost:9092 --entity-type topics --entity-name 5_topic --alter --add-config min.insync.replicas=2
+
+### Изменить конфигурацию топика, удалять информацию с топика после 10000 мс
+kafka-configs.sh --bootstrap-server localhost:9092 --entity-type topics --entity-name 5_topic --alter --add-config retention.ms=10000
 
 ### Удалить конфигурацию 
 kafka-configs.sh --bootstrap-server localhost:9092 --entity-type topics --entity-name 5_topic --alter --delete-config min.insync.replicas
